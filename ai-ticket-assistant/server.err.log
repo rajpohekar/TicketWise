@@ -1,0 +1,72 @@
+Signup error: fetch failed
+Error creating ticket fetch failed
+Error creating ticket fetch failed
+Error creating ticket fetch failed
+Failed to register
+TypeError: fetch failed
+    at Object.fetch (node:internal/deps/undici/undici:11731:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async fetch (file:///C:/Users/ASUS%20Vivobook/AI_ticket_system-main/ai-ticket-assistant/node_modules/inngest/helpers/env.js:156:12)
+    at async fetchWithAuthFallback (file:///C:/Users/ASUS%20Vivobook/AI_ticket_system-main/ai-ticket-assistant/node_modules/inngest/helpers/net.js:13:12)
+    at async InngestCommHandler.register (file:///C:/Users/ASUS%20Vivobook/AI_ticket_system-main/ai-ticket-assistant/node_modules/inngest/components/InngestCommHandler.js:1331:10)
+    at async InngestCommHandler.handleAction (file:///C:/Users/ASUS%20Vivobook/AI_ticket_system-main/ai-ticket-assistant/node_modules/inngest/components/InngestCommHandler.js:1089:43)
+    at async ServerTiming.wrap (file:///C:/Users/ASUS%20Vivobook/AI_ticket_system-main/ai-ticket-assistant/node_modules/inngest/helpers/ServerTiming.js:64:11)
+    at async handleAndPrepare (file:///C:/Users/ASUS%20Vivobook/AI_ticket_system-main/ai-ticket-assistant/node_modules/inngest/components/InngestCommHandler.js:593:19)
+    at async ServerTiming.wrap (file:///C:/Users/ASUS%20Vivobook/AI_ticket_system-main/ai-ticket-assistant/node_modules/inngest/helpers/ServerTiming.js:64:11) {
+  cause: Error: connect ECONNREFUSED ::1:8288
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:128:17) {
+    errno: -4078,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '::1',
+    port: 8288
+  }
+}
+Failed to register
+TypeError: fetch failed
+    at Object.fetch (node:internal/deps/undici/undici:11731:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async fetch (file:///C:/Users/ASUS%20Vivobook/AI_ticket_system-main/ai-ticket-assistant/node_modules/inngest/helpers/env.js:156:12)
+    at async fetchWithAuthFallback (file:///C:/Users/ASUS%20Vivobook/AI_ticket_system-main/ai-ticket-assistant/node_modules/inngest/helpers/net.js:13:12)
+    at async InngestCommHandler.register (file:///C:/Users/ASUS%20Vivobook/AI_ticket_system-main/ai-ticket-assistant/node_modules/inngest/components/InngestCommHandler.js:1331:10)
+    at async InngestCommHandler.handleAction (file:///C:/Users/ASUS%20Vivobook/AI_ticket_system-main/ai-ticket-assistant/node_modules/inngest/components/InngestCommHandler.js:1089:43)
+    at async ServerTiming.wrap (file:///C:/Users/ASUS%20Vivobook/AI_ticket_system-main/ai-ticket-assistant/node_modules/inngest/helpers/ServerTiming.js:64:11)
+    at async handleAndPrepare (file:///C:/Users/ASUS%20Vivobook/AI_ticket_system-main/ai-ticket-assistant/node_modules/inngest/components/InngestCommHandler.js:593:19)
+    at async ServerTiming.wrap (file:///C:/Users/ASUS%20Vivobook/AI_ticket_system-main/ai-ticket-assistant/node_modules/inngest/helpers/ServerTiming.js:64:11) {
+  cause: Error: connect ECONNREFUSED ::1:8288
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:128:17) {
+    errno: -4078,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '::1',
+    port: 8288
+  }
+}
+Failed to register
+TypeError: fetch failed
+    at Object.fetch (node:internal/deps/undici/undici:11731:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async fetch (file:///C:/Users/ASUS%20Vivobook/AI_ticket_system-main/ai-ticket-assistant/node_modules/inngest/helpers/env.js:156:12)
+    at async fetchWithAuthFallback (file:///C:/Users/ASUS%20Vivobook/AI_ticket_system-main/ai-ticket-assistant/node_modules/inngest/helpers/net.js:13:12)
+    at async InngestCommHandler.register (file:///C:/Users/ASUS%20Vivobook/AI_ticket_system-main/ai-ticket-assistant/node_modules/inngest/components/InngestCommHandler.js:1331:10)
+    at async InngestCommHandler.handleAction (file:///C:/Users/ASUS%20Vivobook/AI_ticket_system-main/ai-ticket-assistant/node_modules/inngest/components/InngestCommHandler.js:1089:43)
+    at async ServerTiming.wrap (file:///C:/Users/ASUS%20Vivobook/AI_ticket_system-main/ai-ticket-assistant/node_modules/inngest/helpers/ServerTiming.js:64:11)
+    at async handleAndPrepare (file:///C:/Users/ASUS%20Vivobook/AI_ticket_system-main/ai-ticket-assistant/node_modules/inngest/components/InngestCommHandler.js:593:19)
+    at async ServerTiming.wrap (file:///C:/Users/ASUS%20Vivobook/AI_ticket_system-main/ai-ticket-assistant/node_modules/inngest/helpers/ServerTiming.js:64:11) {
+  cause: Error: connect ECONNREFUSED ::1:8288
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:128:17) {
+    errno: -4078,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '::1',
+    port: 8288
+  }
+}
+andler.js:593:19)
+    at async innerHandler (file:///C:/Users/ASUS%20Vivobook/AI_ticket_system-main/ai-ticket-assistant/node_modules/inngest/components/InngestCommHandler.js:641:22) {
+  cause: undefined,
+  stepId: 'get-user-email'
+}

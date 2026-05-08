@@ -12,8 +12,7 @@ function escapeRegex(string) {
 
 
 export const onTicketCreated = inngest.createFunction(
-  { id: "on-ticket-created", retries: 2 },
-  { event: "ticket/created" },
+  { id: "on-ticket-created", retries: 2, triggers: [{ event: "ticket/created" }] },
   async ({ event, step }) => {
     try {
       const { ticketId } = event.data;
@@ -21,7 +20,7 @@ export const onTicketCreated = inngest.createFunction(
       //fetch ticket from DB
       const ticket = await step.run("fetch-ticket", async () => {
         const ticketObject = await Ticket.findById(ticketId);
-        if (!ticket) {
+        if (!ticketObject) {
           throw new NonRetriableError("Ticket not found");
         }
         return ticketObject;
@@ -33,21 +32,24 @@ export const onTicketCreated = inngest.createFunction(
       // });
 
       // Run AI Analysis
-      const aiResponse = await step.run("ai-processing", async () => {
-         const analysis = await analyzeTicket(ticket);
-         if (!analysis || !analysis.priority || !analysis.relatedSkills) {
-             console.warn("AI analysis failed or returned incomplete data for ticket:", ticket._id);
-             // Decide on fallback behavior: maybe assign default priority/skills or fail
-             // For now, let's assign medium priority and empty skills as a fallback
-             return {
-                 priority: 'medium',
-                 helpfulNotes: analysis?.helpfulNotes || 'AI analysis could not provide detailed notes.',
-                 relatedSkills: analysis?.relatedSkills || [],
-                 summary: analysis?.summary || 'AI analysis could not provide a summary.'
-             };
-         }
-         return analysis;
-      });
+      // Run AI Analysis directly (agent-kit uses step internally, wrapping it causes NESTING_STEPS error)
+      let analysis;
+      try {
+         analysis = await analyzeTicket(ticket);
+      } catch (err) {
+         console.warn("AI analysis failed or threw error:", err.message);
+      }
+
+      let aiResponse = analysis;
+      if (!analysis || !analysis.priority || !analysis.relatedSkills) {
+          console.warn("AI analysis returned incomplete data for ticket:", ticket._id);
+          aiResponse = {
+              priority: 'medium',
+              helpfulNotes: analysis?.helpfulNotes || 'AI analysis could not provide detailed notes.',
+              relatedSkills: analysis?.relatedSkills || [],
+              summary: analysis?.summary || 'AI analysis could not provide a summary.'
+          };
+      }
 
 
       // Update ticket with AI results

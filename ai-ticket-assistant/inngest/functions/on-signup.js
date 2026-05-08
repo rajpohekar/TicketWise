@@ -4,17 +4,23 @@ import { NonRetriableError } from "inngest";
 import { sendMail } from "../../utils/mailer.js";
 
 export const onUserSignup = inngest.createFunction(
-  { id: "on-user-signup", retries: 2 },
-  { event: "user/signup" },
+  { id: "on-user-signup", retries: 2, triggers: [{ event: "user/signup" }] },
   async ({ event, step }) => {
     try {
       const { email } = event.data;
+      console.log("Processing signup for email:", email);
+      
       const user = await step.run("get-user-email", async () => {
-        const userObject = await User.findOne({ email });
+        // Use case-insensitive search for robustness
+        const userObject = await User.findOne({ 
+          email: { $regex: new RegExp(`^${email}$`, "i") } 
+        });
+        
         if (!userObject) {
-          throw new NonRetriableError("User no longer exists in our database");
+          console.error("User lookup failed for email:", email);
+          throw new NonRetriableError(`User with email ${email} no longer exists in our database`);
         }
-        return userObject;
+        return userObject.toObject();
       });
 
       // Corrected typo: setp -> step

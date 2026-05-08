@@ -1,0 +1,33 @@
+{"time":"2026-05-07T21:31:30.6577765Z","level":"INFO","msg":"initialized database","db":"sqlite","mode":"memory"}
+{"time":"2026-05-07T21:31:30.6737175Z","level":"INFO","msg":"ran database migrations","db":"sqlite","mode":"memory"}
+{"time":"2026-05-07T21:31:30.6855615Z","level":"INFO","msg":"starting executor grpc server","svc":"executor","addr":":50053"}
+{"time":"2026-05-07T21:31:30.6880775Z","level":"INFO","msg":"service starting","caller":"debug-api-dev","service":"debug-api-dev"}
+{"time":"2026-05-07T21:31:30.6880775Z","level":"INFO","msg":"autodiscovering locally hosted SDKs"}
+{"time":"2026-05-07T21:31:30.6880775Z","level":"INFO","msg":"service starting","caller":"executor","service":"executor"}
+{"time":"2026-05-07T21:31:30.6940801Z","level":"INFO","msg":"subscribing to function queue"}
+{"time":"2026-05-07T21:31:30.6880775Z","level":"INFO","msg":"service starting","caller":"lease-scavenger","service":"lease-scavenger"}
+{"time":"2026-05-07T21:31:30.6880775Z","level":"INFO","msg":"service starting","caller":"devserver","service":"devserver"}
+{"time":"2026-05-07T21:31:30.6880775Z","level":"INFO","msg":"starting event stream","backend":"redis"}
+{"time":"2026-05-07T21:31:30.6890807Z","level":"INFO","msg":"service starting","caller":"api","service":"api"}
+{"time":"2026-05-07T21:31:30.6890807Z","level":"INFO","msg":"service starting","caller":"connect-gateway","service":"connect-gateway"}
+{"time":"2026-05-07T21:31:30.6900799Z","level":"INFO","msg":"starting debug api","addr":":7777"}
+{"time":"2026-05-07T21:31:30.6950791Z","level":"INFO","msg":"Executor started in assignedQueueShard Mode","queue_shard":"default"}
+{"time":"2026-05-07T21:31:30.6960784Z","level":"INFO","msg":"service starting","caller":"runner","service":"runner"}
+{"time":"2026-05-07T21:31:30.6960784Z","level":"INFO","msg":"starting server","caller":"api","addr":"0.0.0.0:8288"}
+{"time":"2026-05-07T21:31:30.7026014Z","level":"INFO","msg":"starting connect gateway grpc server","caller":"connect-gateway","addr":":50052"}
+{"time":"2026-05-07T21:31:30.7081351Z","level":"INFO","msg":"subscribing to events","topic":"events"}
+{"time":"2026-05-07T21:31:35.8446397Z","level":"INFO","msg":"apps synced, disabling auto-discovery"}
+{"time":"2026-05-07T21:31:58.2744663Z","level":"INFO","msg":"publishing event","caller":"api","event_name":"ticket/created","internal_id":"01KR25NHE20B22JDRSX3943S8B","external_id":"01KR25NHE20B22JDRSX3943S8B","event":{"id":"01KR25NHE20B22JDRSX3943S8B","name":"ticket/created","data":{"createdBy":"69fcb8aad93861c471484d03","description":"the issue is in the components html ","ticketId":"69fd04ceb56c9a640f29bed0","title":"React frontend issue"},"ts":1778189518269}}
+{"time":"2026-05-07T21:31:58.3779229Z","level":"INFO","msg":"received event","event":"ticket/created","event_id":"01KR25NHE20B22JDRSX3943S8B","internal_id":"01KR25NHE20B22JDRSX3943S8B"}
+{"time":"2026-05-07T21:31:58.3824377Z","level":"INFO","msg":"initializing fn","event":"ticket/created","event_id":"01KR25NHE20B22JDRSX3943S8B","internal_id":"01KR25NHE20B22JDRSX3943S8B","function":"on-ticket-created","function_id":"5ea5e04d-3691-52be-8bc3-79091ffa3144"}
+{"time":"2026-05-07T21:32:06.1450901Z","level":"INFO","msg":"received event","event":"inngest/function.finished","event_id":"01KR25NRY8PPZCMTSCJ19BYVSF","internal_id":"01KR25NRY812VG1F7BDZVF0BCN"}
+{"time":"2026-05-07T21:42:24.014637Z","level":"WARN","msg":"queue operation took >1s","op":"partition_peek","duration":460245301400}
+{"time":"2026-05-08T11:17:31.696188Z","level":"INFO","msg":"publishing event","caller":"api","event_name":"user/signup","internal_id":"01KR3MX5TD1DKZQXTA1HBB265V","external_id":"01KR3MX5TD1DKZQXTA1HBB265V","event":{"id":"01KR3MX5TD1DKZQXTA1HBB265V","name":"user/signup","data":{"email":"test@example.com"},"ts":1778239051597}}
+{"time":"2026-05-08T11:17:31.9486589Z","level":"INFO","msg":"received event","event":"user/signup","event_id":"01KR3MX5TD1DKZQXTA1HBB265V","internal_id":"01KR3MX5TD1DKZQXTA1HBB265V"}
+{"time":"2026-05-08T11:17:31.9513413Z","level":"INFO","msg":"initializing fn","event":"user/signup","event_id":"01KR3MX5TD1DKZQXTA1HBB265V","internal_id":"01KR3MX5TD1DKZQXTA1HBB265V","function":"on-user-signup","function_id":"1205373b-8e97-58d9-b6dc-d973d59cf938"}
+{"time":"2026-05-08T11:17:32.4507704Z","level":"INFO","msg":"received event","event":"inngest/function.failed","event_id":"01KR3MX65GA45XV8R9ESDYHY0W","internal_id":"01KR3MX6KHARCXYQ4WWBCPTQ2A"}
+{"time":"2026-05-08T11:17:32.4507704Z","level":"INFO","msg":"received event","event":"inngest/function.finished","event_id":"01KR3MX6KGJFJ8SP2NS4KT2TWS","internal_id":"01KR3MX6KHS8RXXVPQAT4GNNCG"}
+{"time":"2026-05-08T11:30:34.1433143Z","level":"INFO","msg":"publishing event","caller":"api","event_name":"ticket/created","internal_id":"01KR3NN20ZKBZYS2GP1CP5KRDN","external_id":"01KR3NN20ZKBZYS2GP1CP5KRDN","event":{"id":"01KR3NN20ZKBZYS2GP1CP5KRDN","name":"ticket/created","data":{"createdBy":"69fd038f93eb65e090d67433","description":"what measures should i do to reduce ai hallucination \ntell me ","ticketId":"69fdc95a1245904730f7f5db","title":"AI hallucinates while creating a ticket"},"ts":1778239834130}}
+{"time":"2026-05-08T11:30:34.3994687Z","level":"INFO","msg":"received event","event":"ticket/created","event_id":"01KR3NN20ZKBZYS2GP1CP5KRDN","internal_id":"01KR3NN20ZKBZYS2GP1CP5KRDN"}
+{"time":"2026-05-08T11:30:34.4146121Z","level":"INFO","msg":"initializing fn","event":"ticket/created","event_id":"01KR3NN20ZKBZYS2GP1CP5KRDN","internal_id":"01KR3NN20ZKBZYS2GP1CP5KRDN","function":"on-ticket-created","function_id":"5ea5e04d-3691-52be-8bc3-79091ffa3144"}
+{"time":"2026-05-08T11:30:44.4263022Z","level":"INFO","msg":"received event","event":"inngest/function.finished","event_id":"01KR3NNBYQVQM9PWEADWHV20AY","internal_id":"01KR3NNBYQ1N30BY9D8XNRD2SQ"}

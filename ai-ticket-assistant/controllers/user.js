@@ -1,5 +1,5 @@
 // Corrected typo: brcypt -> bcrypt
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import User from "../models/user.js";
 import { inngest } from "../inngest/client.js";
@@ -11,13 +11,18 @@ export const signup = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = await User.create({ email, password: hashedPassword, skills });
 
-    //Fire inngest event
-    await inngest.send({
-      name: "user/signup",
-      data: {
-        email,
-      },
-    });
+    // Fire inngest event, but don't fail signup if the background worker is offline.
+    try {
+      await inngest.send({
+        name: "user/signup",
+        data: {
+          email,
+        },
+      });
+      console.log("✅ Welcome email event queued for:", email);
+    } catch (eventError) {
+      console.warn("User created, but welcome email was not queued:", eventError.message);
+    }
 
     const token = jwt.sign(
       { _id: user._id, role: user.role },
